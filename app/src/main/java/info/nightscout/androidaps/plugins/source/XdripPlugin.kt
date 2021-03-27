@@ -35,7 +35,7 @@ class XdripPlugin @Inject constructor(
     private var sensorBatteryLevel = -1
 
     override fun advancedFilteringSupported(): Boolean {
-        return advancedFiltering
+        return true
     }
 
     override fun handleNewData(intent: Intent) {
@@ -54,7 +54,7 @@ class XdripPlugin @Inject constructor(
     }
 
     private fun setSource(source: String) {
-        advancedFiltering = source.contains("G5 Native") || source.contains("G6 Native")
+        advancedFiltering = source.contains("G5 Native") || source.contains("G6 Native")|| source.contains("Libre2 (patched App)") || source.contains("XDRIP")
     }
 
     override fun getSensorBatteryLevel(): Int {
